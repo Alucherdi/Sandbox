@@ -12,6 +12,7 @@ public class ApplicationConfig extends Application {
         Set<Class<?>> resources = new java.util.HashSet<>();
 
         resources.add(Sandbox.services.Sample.class);
+        resources.add(Sandbox.services.User.class);
 
         return resources;
     }
