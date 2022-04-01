@@ -1,0 +1,26 @@
+{
+    "codigo": 0,
+    "nickname": "alucherdi",
+    "b": true,
+    "a": {
+        "asdf": "fdas",
+        "a": 123
+    },
+    "arreglo": [
+        1, 2, 3, 4, 5
+    ],
+    "arreglo2": [
+        "a", "b", "c"
+    ],
+    "arreglo3": [
+        {
+            "a": 1
+        }, {}, {}, {}
+    ]
+}
+
+a = objeto
+a.codigo
+a.a.a
+a.arreglo[1]
+a.arreglo3[0].a

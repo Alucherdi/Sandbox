@@ -5,6 +5,8 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
+import org.json.JSONObject;
+
 @Path("/user")
 public class User {
     @POST
@@ -14,15 +16,19 @@ public class User {
         @FormParam("pass") String pass
     ) {
         String[] users = new String[]{
-            "Alu", "Kirito", "Hearbox"
+            "alu", "kirito", "hearbox"
         };
 
         String[] passs = new String[]{
             "alu123", "soyputo", "gpi"
         };
 
+        String[] nicknames = new String[]{
+            "Alucherdi", "Glitch", "Jett"
+        };
+
         int userIndex = 0;
-        String response;
+        JSONObject respuesta = new JSONObject();
 
         for (int i = 0; i < users.length; i++) {
             if (user.compareTo(users[i]) == 0) {
@@ -32,11 +38,12 @@ public class User {
         }
 
         if (pass.compareTo(passs[userIndex]) == 0) {
-            response = "Bienvenido";
+            respuesta.put("codigo", 0);
+            respuesta.put("nickname", nicknames[userIndex]);
         } else {
-            response = "Credenciales incorrectas";
+            respuesta.put("codigo", 1);
         }
 
-        return response;
+        return respuesta.toString();
     }
 }
